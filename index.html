@@ -61,8 +61,13 @@
       <!-- Герой -->
       <section class="hero">
         <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-        <!-- <p>абзац</p> -->
-        <button type="button" class="hero-btn btn">Заказать услугу</button>
+        <button class="hero-btn btn data-open-modal">Заказать услугу</button>
+        <div class="backdrop is-hidden data-backdrop">
+          <div class="modal">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <button class="data-close-modal">закрыть</button>
+          </div>
+        </div>
       </section>
       <!-- Софт скиллс -->
       <section class="skills">
@@ -475,5 +480,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
