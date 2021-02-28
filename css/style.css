@@ -11,6 +11,8 @@
   --grey-icon-first: rgba(117, 117, 117, 1);
   --grey-icon-second: rgba(175, 177, 184, 1);
   --grey-icon-third: rgba(255, 255, 255, 0.1);
+  --grey-icon-four: rgba(0, 0, 0, 0.1);
+  --grey-background: rgba(0, 0, 0, 0.2);
   --white-first: rgba(255, 255, 255, 1);
   --white-second: rgba(245, 244, 250, 1);
   --white-background-first: rgba(245, 244, 250, 1);
@@ -247,15 +249,21 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0 536px;
+  padding-top: 221px;
+  padding-bottom: 222px;
+  margin: 0;
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .modal {
+  display: flex;
   position: absolute;
   min-height: 581px;
   min-width: 528px;
@@ -263,6 +271,28 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.close-btn {
+  display: flex;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-color: var(--white-first);
+}
+
+.close-icon {
+  display: flex;
+  border-radius: 50%;
+  border: 1px solid var(--grey-icon-four);
+  padding: 6px;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 .skills {
