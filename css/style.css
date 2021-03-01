@@ -287,30 +287,37 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 0 536px;
-  padding-top: 221px;
-  padding-bottom: 222px;
   margin: 0;
+
+  opacity: 1;
+
+  transition: opacity var(--animation-timing-function);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-  visibility: hidden;
+  visibility: visible;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.7);
 }
 
 .modal {
-  display: flex;
   position: absolute;
   min-height: 581px;
   min-width: 528px;
   background-color: var(--white-first);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform var(--animation-timing-function);
 }
 
 .close-btn {
@@ -404,7 +411,6 @@ footer {
 .activity-title {
   text-align: center;
   margin: 0 auto;
-  /* min-width: 376px; */
   margin-top: 0;
   margin-bottom: 50px;
   font-weight: 700;
@@ -438,9 +444,8 @@ footer {
   height: 70px;
   width: 100%;
   background-color: var(--grey-back-second);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  padding: 27px 0;
 }
 
 .activity-list .activity-text {
@@ -530,6 +535,9 @@ footer {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
+
+  transition: background-color var(--animation-timing-function),
+    color var(--animation-timing-function);
 }
 
 .team-list .link-icon {
@@ -584,6 +592,9 @@ footer {
   justify-content: center;
   align-items: center;
   color: var(--grey-icon-second);
+
+  transition: color var(--animation-timing-function),
+    border-color var(--animation-timing-function);
 }
 
 .clients-item .link-icon {
@@ -676,6 +687,8 @@ footer {
   color: var(--white-first);
   justify-content: center;
   align-items: center;
+
+  transition: background-color var(--animation-timing-function);
 }
 
 .connect-item .link-icon {
@@ -711,7 +724,7 @@ footer {
   margin-right: 8px;
 }
 
-.btn-list > li > button {
+.btn-list button {
   display: inline-block;
   border-radius: 4px;
   padding: 6px 22px;
@@ -722,6 +735,10 @@ footer {
   line-height: 1.63;
   letter-spacing: 0.03em;
   background-color: var(--white-second);
+
+  transition: background-color var(--animation-timing-function),
+    color var(--animation-timing-function),
+    box-shadow var(--animation-timing-function);
 }
 
 .btn-all {
@@ -746,6 +763,13 @@ footer {
 
 .cards-list .item {
   background-color: var(--white-first);
+  transition: box-shadow var(--animation-timing-function);
+}
+
+.cards-list > :hover,
+.cards-list > :focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .cards-list .item-title {
@@ -765,11 +789,6 @@ footer {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--grey-first);
-}
-
-.cards-list .item-title,
-.cards-list .item-text {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .cards-list {
@@ -793,7 +812,8 @@ footer {
   opacity: 1;
 }
 
-.card-link:hover .product-overlay {
+.card-link:hover .product-overlay,
+.card-link:focus .product-overlay {
   opacity: 1;
   transform: translateY(0);
 }
@@ -860,12 +880,12 @@ footer {
 .container-card {
   padding: 20px 24px;
   border: 1px solid var(--grey-line-second);
+  transition: filter var(--animation-timing-function);
 }
 
-.cards-list > :hover,
-.cards-list > :focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+.container-card:hover,
+.container-card:focus {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .card-link {
